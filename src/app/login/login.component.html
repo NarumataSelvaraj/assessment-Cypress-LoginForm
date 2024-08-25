@@ -1,0 +1,35 @@
+   <div class="container mt-5">
+    <h4 class="text-center">Login Form</h4>
+    <form #form="ngForm" (ngSubmit)="onSubmit()" class="p-4 border rounded">
+      <div class="form-group mb-3">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="usernameModel" 
+               #username="ngModel" 
+               class="form-control" 
+               [ngClass]="{ 'is-invalid': form.submitted && username.invalid }" 
+               required>
+        <div *ngIf="form.submitted && username.invalid" class="invalid-feedback">
+          <div *ngIf="username.errors?.['required']">User name is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="passwordModel" 
+               #password="ngModel" 
+               class="form-control" 
+               [ngClass]="{ 'is-invalid': form.submitted && password.invalid }" 
+               required>
+        <div *ngIf="form.submitted && password.invalid" class="invalid-feedback">
+          <div *ngIf="password.errors?.['required']">Password is required</div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-danger w-50">Submit</button>
+      </div>      
+    </form>
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+      {{ successMessage }}
+    </div>
+  </div>
+  
