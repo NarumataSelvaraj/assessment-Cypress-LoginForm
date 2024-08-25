@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Running Cypress testcases
 
-Run `npx cypress open` to run the cypresss testcases
+Run `npx cypress open` to run the cypress testcases
